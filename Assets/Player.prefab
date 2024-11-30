@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 4181505536147174735}
   - component: {fileID: 703712246047721081}
   - component: {fileID: 6392528151328146063}
-  m_Layer: 0
+  - component: {fileID: 7185389352061894821}
+  - component: {fileID: 6026618035152977263}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +62,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480272415871234117}
   m_Enabled: 0
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4939,6 +4941,36 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &7185389352061894821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480272415871234117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaaf512beaa6f284cbebdf6372e17731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  canMoveVertical: 1
+  playerMoveBounds: {fileID: 0}
+--- !u!114 &6026618035152977263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480272415871234117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6222199ba10b53646834db538ee2d247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuelConsumptionRate: 0.5
+  initialFuel: 100
+  currentFuel: 100
 --- !u!1001 &1313524484789616929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4987,9 +5019,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0baa973ef8e17bb4081501244f2abd08, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0baa973ef8e17bb4081501244f2abd08, type: 3}
       propertyPath: m_Name
       value: rocket_fuelA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0baa973ef8e17bb4081501244f2abd08, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5049,9 +5089,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b25f5cecfb30618498f4db96bf9ae55f, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b25f5cecfb30618498f4db96bf9ae55f, type: 3}
       propertyPath: m_Name
       value: rocket_topB
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b25f5cecfb30618498f4db96bf9ae55f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5111,9 +5159,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 49f11f464a61ff941b961eb59a107c09, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 49f11f464a61ff941b961eb59a107c09, type: 3}
       propertyPath: m_Name
       value: rocket_baseA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 49f11f464a61ff941b961eb59a107c09, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5173,9 +5229,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 769177ce8bd96334fbd31655ff526df8, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 769177ce8bd96334fbd31655ff526df8, type: 3}
       propertyPath: m_Name
       value: rocket_finsB
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 769177ce8bd96334fbd31655ff526df8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5235,9 +5299,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fa284d8b6ad191a4fb0d5628b0610600, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa284d8b6ad191a4fb0d5628b0610600, type: 3}
       propertyPath: m_Name
       value: desk_chairArms
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fa284d8b6ad191a4fb0d5628b0610600, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5297,9 +5369,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 68fcfcca93c7d404fa30d2b1e95184aa, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 68fcfcca93c7d404fa30d2b1e95184aa, type: 3}
       propertyPath: m_Name
       value: rocket_finsA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68fcfcca93c7d404fa30d2b1e95184aa, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5359,9 +5439,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 51c245b5e4802394c861168dc4b615e1, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 51c245b5e4802394c861168dc4b615e1, type: 3}
       propertyPath: m_Name
       value: rocket_sidesA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 51c245b5e4802394c861168dc4b615e1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
