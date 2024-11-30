@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerFuelComponent : MonoBehaviour
@@ -12,6 +9,15 @@ public class PlayerFuelComponent : MonoBehaviour
     public float CurrentFuel = 100.0f;
     
     public bool HasFuel => CurrentFuel > 0.0f;
+
+    public void RemoveFuel(float amount)
+    {
+        CurrentFuel-=amount;
+        if (CurrentFuel < 0.0f)
+        {
+            OnNoFuelLeft();
+        }
+    }
     
     private void Start()
     {
