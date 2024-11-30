@@ -794,6 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103475386}
   - component: {fileID: 2103475385}
+  - component: {fileID: 2103475388}
   - component: {fileID: 2103475384}
   - component: {fileID: 2103475383}
   - component: {fileID: 2103475382}
@@ -889,7 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  canMoveVertical: 0
+  canMoveVertical: 1
   playerMoveBounds: {fileID: 1782492723}
 --- !u!4 &2103475386
 Transform:
@@ -933,6 +934,21 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &2103475388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103475381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6222199ba10b53646834db538ee2d247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuelConsumptionRate: 0.5
+  initialFuel: 100
+  CurrentFuel: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
