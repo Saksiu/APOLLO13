@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class MeteorManager : MonoBehaviour
+public class ObstacleManager : MonoBehaviour
 {
     [SerializeField] private Collider playerMoveBounds;
     [SerializeField] private GameObject meteor;
@@ -54,6 +54,11 @@ public class MeteorManager : MonoBehaviour
 
         // Upewnij się, że ustawiasz właściwy wektor prędkości
         rb.velocity = new Vector3(0, 0, -meteorSpeed);
+        
+    }
+
+    private void SpawnEnemySpaceShip()
+    {
         
     }
 
