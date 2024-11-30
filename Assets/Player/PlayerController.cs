@@ -29,8 +29,12 @@ public class PlayerController : Singleton<PlayerController>, PlayerInputActions.
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!FuelComponent.HasFuel)
+        if (!FuelComponent.HasFuel)
+        {
+            rb.velocity=(Vector3.zero);
             return;
+        }
+            
         
         Vector2 moveInput = PlayerInputManager.PlayerInput.Player.Move.ReadValue<Vector2>();
         Vector3 finalMoveVector= new Vector3(moveInput.x, 0, moveInput.y);
