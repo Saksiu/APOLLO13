@@ -1,7 +1,10 @@
 
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
 {
@@ -26,9 +29,12 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         Vector2 moveInput = PlayerInputManager.PlayerInput.Player.Move.ReadValue<Vector2>();
         Vector3 finalMoveVector= new Vector3(moveInput.x, 0, moveInput.y);
         finalMoveVector *= moveSpeed;
-        if(!playerMoveBounds.bounds.Contains(rb.position+finalMoveVector))
+        if (!playerMoveBounds.bounds.Contains(rb.position + finalMoveVector))
+        {
+            rb.velocity=(Vector3.zero);
             return;
-        
+        }
+
         rb.velocity=(finalMoveVector);
     }
 
