@@ -30,6 +30,7 @@ public class PlayerFuelComponent : MonoBehaviour
     {
         if(!HasFuel) return;
         currentFuel -= (fuelConsumptionRate * Time.fixedDeltaTime);
+        OnFuelChanged?.Invoke(currentFuel);
         if (currentFuel < 0.0f)
         {
             OnNoFuelLeft();
