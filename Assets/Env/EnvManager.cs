@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class EnvManager : Singleton<EnvManager>
 {
@@ -20,7 +22,10 @@ public class EnvManager : Singleton<EnvManager>
     
     [SerializeField] private Transform backgroundSpawnPoint;
     [SerializeField] private float backgroundSlideSpeed = 1.0f;
-    [SerializeField] private Vector2 backgroundScale = new Vector2(1,1);
+    [SerializeField] private Vector2 backgroundScale = new Vector2(10,1);
+    
+    [SerializeField] private Vector2 backGroundOffsetMin = new Vector2(0.0f, 0.0f);
+    [SerializeField] private Vector2 backGroundOffsetMax = new Vector2(1.0f, 1.0f);
     
     [Tooltip("In seconds")]
     [SerializeField] private float backgroundSpawnInterval = 1.0f;
@@ -31,7 +36,7 @@ public class EnvManager : Singleton<EnvManager>
     {
         //spawn initial background
         Vector3 nextSpawnPoint = backgroundSpawnPoint.position;
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             GameObject newBackground = Instantiate(backgroundPrefab);
             newBackground.transform.position = nextSpawnPoint;
@@ -39,6 +44,7 @@ public class EnvManager : Singleton<EnvManager>
             newBackground.GetComponent<MeshRenderer>().material.color = Thresholds[currentThreshold].color;
             newBackground.GetComponent<MeshRenderer>().material.mainTexture=Thresholds[currentThreshold].texture;
             newBackground.GetComponent<MeshRenderer>().material.mainTextureScale=backgroundScale;
+            newBackground.GetComponent<MeshRenderer>().material.mainTextureOffset=getRandomBackgroundOffset();
             nextSpawnPoint.z-=backgroundLength;
             
         }
@@ -54,6 +60,13 @@ public class EnvManager : Singleton<EnvManager>
         }
     }
 
+    private Vector2 getRandomBackgroundOffset()
+    {
+        Vector2 toReturn = new Vector2();
+        toReturn.x = Random.Range(backGroundOffsetMin.x, backGroundOffsetMax.x);
+        toReturn.y = Random.Range(backGroundOffsetMin.y, backGroundOffsetMax.y);
+        return toReturn;
+    }
     private void spawnNextBackground()
     {
         if(spawnedBackgrounds.Count>0)
@@ -62,13 +75,14 @@ public class EnvManager : Singleton<EnvManager>
         newBackground.GetComponent<MeshRenderer>().material.color = Thresholds[currentThreshold].color;
         newBackground.GetComponent<MeshRenderer>().material.mainTexture=Thresholds[currentThreshold].texture;
         newBackground.GetComponent<MeshRenderer>().material.mainTextureScale=backgroundScale;
+        newBackground.GetComponent<MeshRenderer>().material.mainTextureOffset=getRandomBackgroundOffset();
         spawnedBackgrounds.Add(newBackground);
     }
 
     private void FixedUpdate()
     {
         flownDistance += Time.fixedDeltaTime*flySpeed;
-        if(Thresholds.Count>=currentThreshold+1&&flownDistance >= Thresholds[currentThreshold+1].distance)
+        if(Thresholds.Count>currentThreshold+1&&flownDistance >= Thresholds[currentThreshold+1].distance)
         {
             currentThreshold++;
         }
