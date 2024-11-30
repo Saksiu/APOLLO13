@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,16 @@ public class MeteorMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.z <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter()
+    {
+        PlayerController.Instance.FuelComponent.RemoveFuel(10);
     }
 }

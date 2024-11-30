@@ -849,6 +849,14 @@ PrefabInstance:
       propertyPath: playerMoveBounds
       value: 
       objectReference: {fileID: 1782492723}
+    - target: {fileID: 4181505536147174735, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181505536147174735, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5480272415871234117, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: m_Name
       value: Player
