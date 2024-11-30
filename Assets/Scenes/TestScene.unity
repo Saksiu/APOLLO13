@@ -846,6 +846,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2699750936941354911, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699750936941354911, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: playerMoveBounds
       value: 
       objectReference: {fileID: 1782492723}
