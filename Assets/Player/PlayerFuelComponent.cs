@@ -4,24 +4,37 @@ using UnityEngine.Serialization;
 
 public class PlayerFuelComponent : MonoBehaviour
 {
-    [Tooltip("Per second")]
-    [SerializeField] private float fuelConsumptionRate = 5.0f;
-    
+    [Tooltip("Per second")] [SerializeField]
+    private float fuelConsumptionRate = 5.0f;
+
     [SerializeField] public float initialFuel = 100.0f;
     [SerializeField] public float currentFuel = 100.0f;
-    
+
     public bool HasFuel => currentFuel > 0.0f;
 
     public void RemoveFuel(float amount)
     {
-        currentFuel-=amount;
+        currentFuel -= amount;
         if (currentFuel < 0.0f)
         {
             OnNoFuelLeft();
         }
     }
-    
-    private void Start()
+
+    public void AddFuel(float amount)
+    {
+        float check = currentFuel + amount;
+        if (check >= initialFuel)
+        {
+            currentFuel = initialFuel;
+        }
+        else
+        {
+            currentFuel = check;
+        }
+    }
+
+private void Start()
     {
         currentFuel = initialFuel;
     }
