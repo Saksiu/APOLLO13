@@ -6,65 +6,86 @@ public class ObstacleManager : MonoBehaviour
 {
     [SerializeField] private Collider playerMoveBounds;
     [SerializeField] private GameObject meteor;
+    [SerializeField] private GameObject enemySpaceShip;
+    [SerializeField] private GameObject enemyBullet;
     [SerializeField] private float meteorSpeed = 5f;
-    [SerializeField] private Vector2 spawnIntervalRange = new Vector2(5f, 10f);
+    [SerializeField] private Vector2 meteorSpawnIntervalRange = new Vector2(5f, 10f);
+    [SerializeField] private Vector2 enemySpaceShipSpawnIntervalRange = new Vector2(8f, 15f);
 
-    private float timeToNextSpawn;
-    private float timer;
+    private float meteorTimeToNextSpawn;
+    private float enemySpaceShipTimeToNextSpawn;
+
+    private float meteorTimer;
+    private float enemySpaceShipTimer;
 
     private void Start()
     {
         if (playerMoveBounds == null)
         {
-            Debug.LogError("Player Move Bounds nie został ustawiony!");
+            Debug.LogError("Player bounds???");
             return;
         }
 
-        ResetSpawnTimer();
+
+        ResetMeteorSpawnTimer();
+        ResetEnemySpaceShipSpawnTimer();
     }
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        meteorTimer += Time.deltaTime;
+        enemySpaceShipTimer += Time.deltaTime;
 
-        if (timer >= timeToNextSpawn)
+
+        if (meteorTimer >= meteorTimeToNextSpawn)
         {
             SpawnMeteor();
-            ResetSpawnTimer();
+            ResetMeteorSpawnTimer();
         }
-        
-        
+
+        if (enemySpaceShipTimer >= enemySpaceShipTimeToNextSpawn)
+        {
+            SpawnEnemySpaceShip();
+            ResetEnemySpaceShipSpawnTimer();
+        }
     }
 
     private void SpawnMeteor()
     {
         Bounds bounds = playerMoveBounds.bounds;
-    
         float randomX = Random.Range(bounds.min.x, bounds.max.x);
-    
         Vector3 spawnPosition = new Vector3(randomX, 0, 30);
-    
-        GameObject spawnedMeteor = Instantiate(meteor, spawnPosition, Quaternion.identity);
 
+        GameObject spawnedMeteor = Instantiate(meteor, spawnPosition, Quaternion.identity);
         Rigidbody rb = spawnedMeteor.GetComponent<Rigidbody>();
         if (rb == null)
         {
             rb = spawnedMeteor.AddComponent<Rigidbody>();
         }
 
-        // Upewnij się, że ustawiasz właściwy wektor prędkości
         rb.velocity = new Vector3(0, 0, -meteorSpeed);
-        
     }
 
     private void SpawnEnemySpaceShip()
     {
+        Bounds bounds = playerMoveBounds.bounds;
+        float randomX = Random.Range(bounds.min.x, bounds.max.x);
+        Vector3 spawnPosition = new Vector3(randomX, 0, 30);
+
+        Instantiate(enemySpaceShip, spawnPosition, new Quaternion(0, 180,0,0));
         
     }
 
-    private void ResetSpawnTimer()
+    private void ResetMeteorSpawnTimer()
     {
-        timer = 0f;
-        timeToNextSpawn = Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
+        meteorTimer = 0f;
+        meteorTimeToNextSpawn = Random.Range(meteorSpawnIntervalRange.x, meteorSpawnIntervalRange.y);
     }
-}   
+
+    private void ResetEnemySpaceShipSpawnTimer()
+    {
+        enemySpaceShipTimer = 0f;
+        enemySpaceShipTimeToNextSpawn =
+            Random.Range(enemySpaceShipSpawnIntervalRange.x, enemySpaceShipSpawnIntervalRange.y);
+    }
+}
