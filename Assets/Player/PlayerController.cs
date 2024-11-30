@@ -34,7 +34,6 @@ public class PlayerController : Singleton<PlayerController>, PlayerInputActions.
         
         Vector2 moveInput = PlayerInputManager.PlayerInput.Player.Move.ReadValue<Vector2>();
         Vector3 finalMoveVector= new Vector3(moveInput.x, 0, moveInput.y);
-        finalMoveVector *= moveSpeed;
         
         if (!canMoveVertical)
             finalMoveVector.z=0;
@@ -44,7 +43,7 @@ public class PlayerController : Singleton<PlayerController>, PlayerInputActions.
             rb.velocity=(Vector3.zero);
             return;
         }
-
+        finalMoveVector *= moveSpeed;
         rb.velocity=(finalMoveVector);
     }
 
