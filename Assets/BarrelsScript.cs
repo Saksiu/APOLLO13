@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class BarrelsScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,14 +16,12 @@ public class Missile : MonoBehaviour
     {
         if (transform.position.z <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
-    
+
     private void OnCollisionEnter()
     {
-        PlayerController.Instance.FuelComponent.RemoveFuel(2);
-        Destroy(gameObject);
-        
+        PlayerController.Instance.FuelComponent.AddFuel(10);
     }
 }
