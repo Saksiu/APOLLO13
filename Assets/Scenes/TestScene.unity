@@ -849,14 +849,6 @@ PrefabInstance:
       propertyPath: playerMoveBounds
       value: 
       objectReference: {fileID: 1782492723}
-    - target: {fileID: 4181505536147174735, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181505536147174735, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5480272415871234117, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -875,11 +867,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533861363793119094, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7533861363793119094, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7533861363793119094, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: m_LocalRotation.y
@@ -891,7 +883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533861363793119094, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7533861363793119094, guid: 674fb6d97b47f164caf95c812165413e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
