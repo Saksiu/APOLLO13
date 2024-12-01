@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemySpaceShip : MonoBehaviour
 {
-    [SerializeField] private float enemySpaceShipShootInterval = 0.2f;
+    [SerializeField] private float enemySpaceShipShootInterval = 0.4f;
     [SerializeField] private float bulletSpeed = 6f;
     [SerializeField] private float enemySpaceShipSpeed = 3f;
     [SerializeField] private GameObject missile;
@@ -41,6 +41,7 @@ public class EnemySpaceShip : MonoBehaviour
     private void OnCollisionEnter()
     {
         PlayerController.Instance.FuelComponent.RemoveFuel(20);
+        Destroy(gameObject);
     }
 
     private void ShootMissile()
