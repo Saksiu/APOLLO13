@@ -7,21 +7,27 @@ using UnityEngine.Serialization;
 
 public class DistanceManager : Singleton<DistanceManager>
 {
-    private const int MoonTotalDistance = 384400000;
-    [SerializeField] private int _distanceTraveled;
+    //private const int MoonTotalDistance = 384400000;
+    //[SerializeField] private int _distanceTraveled;
     [SerializeField] private TextMeshProUGUI _meterDistance;
 
-    public string GetDistanceFormatted()=>FormatToDistance(_distanceTraveled);
+    //public string GetDistanceFormatted()=>FormatToDistance(_distanceTraveled);
 
-    public string FormatToDistance(int totalDistance)
+    public string FormatToDistance(float totalDistance)
     {
-        int distanceLeft = MoonTotalDistance - totalDistance;
+        //int distanceLeft = MoonTotalDistance - totalDistance;
 
-        int meters = Mathf.FloorToInt(distanceLeft / 1000F);
-        int kilometers = Mathf.FloorToInt(distanceLeft - meters * 1000);
-        return string.Format("Distance to moon: /n {0:000000}km;{1:000}m", kilometers, meters); //TODO: verify format
+        //int meters = Mathf.FloorToInt(distanceLeft / 1000F);
+        //int kilometers = Mathf.FloorToInt(distanceLeft - meters * 1000);
+        //return string.Format("Distance to moon: //n {0:000000}km;{1:000}m", kilometers, meters); //TODO: verify format
+        return $"{(int)totalDistance} km left to moon";
     }
-    
+
+    private void Update()
+    {
+        _meterDistance.text = FormatToDistance(EnvManager.Instance.GetDistanceLeft());
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -41,6 +47,6 @@ public class DistanceManager : Singleton<DistanceManager>
     }
     private void ResetMeter()
     {
-        _distanceTraveled = 0;
+        //_distanceTraveled = 0;
     }
 }

@@ -15,6 +15,7 @@ public class PlayerFuelComponent : MonoBehaviour
     public void RemoveFuel(float amount)
     {
         currentFuel -= amount;
+        currentFuel = Mathf.Max(0.0f, currentFuel);
         if (currentFuel < 0.0f)
         {
             OnNoFuelLeft();
@@ -43,6 +44,7 @@ private void Start()
     {
         if(!HasFuel) return;
         currentFuel -= (fuelConsumptionRate * Time.fixedDeltaTime);
+        currentFuel = Mathf.Max(0.0f, currentFuel);
         OnFuelChanged?.Invoke(currentFuel);
         if (currentFuel < 0.0f)
         {

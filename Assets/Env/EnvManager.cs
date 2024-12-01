@@ -14,6 +14,7 @@ public class EnvManager : Singleton<EnvManager>
     [SerializeField] private float flySpeed = 5.0f;
     public float flownDistance = 0.0f;
     [SerializeField] private float distanceToMoon;
+    public float GetDistanceLeft()=> distanceToMoon-flownDistance;
     
     [Header("Backgrounds")]
     [SerializeField] private GameObject backgroundPrefab;
