@@ -28,8 +28,10 @@ public class PlayerFuelComponent : MonoBehaviour
         {
             currentFuel = initialFuel;
         }
-
-        currentFuel = check;
+        else
+        {
+            currentFuel = check;
+        }
     }
 
 private void Start()

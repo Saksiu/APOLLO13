@@ -23,5 +23,6 @@ public class MeteorMove : MonoBehaviour
     private void OnCollisionEnter()
     {
         PlayerController.Instance.FuelComponent.RemoveFuel(10);
+        Destroy(gameObject);
     }
 }
