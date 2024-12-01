@@ -823,7 +823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1493187158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,6 +919,58 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30bdbf2b9c0bd8446af70e5b67b0dfc8, type: 3}
+--- !u!1 &1704471576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704471578}
+  - component: {fileID: 1704471577}
+  m_Layer: 0
+  m_Name: Universal spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1704471577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704471576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7b1366352a474cb7fbb66088f8f2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMoveBounds: {fileID: 1782492723}
+  defaultObstacleSpeed: 5
+  enemySpawnInterval: 8
+  obstacles:
+  - {fileID: 4693833030185073822, guid: b7bd61fe4c76f97479b247cd4034ad46, type: 3}
+  - {fileID: 9091383735361110688, guid: 2e4c08cddec50154f8c1956cc3ce968d, type: 3}
+  boosts:
+  - {fileID: 4794401636370792793}
+--- !u!4 &1704471578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704471576}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5338697, y: 2.134073, z: 13.6395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782492721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1868,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 407445559061918911, guid: cb42344c49a70994785fe47a520296dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 568.37354
+      value: -3140
       objectReference: {fileID: 0}
     - target: {fileID: 407445559061918911, guid: cb42344c49a70994785fe47a520296dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1824,7 +1876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 407445559061918911, guid: cb42344c49a70994785fe47a520296dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 690.5882
+      value: 9672
       objectReference: {fileID: 0}
     - target: {fileID: 407445559061918911, guid: cb42344c49a70994785fe47a520296dd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1990,6 +2042,7 @@ SceneRoots:
   - {fileID: 2910699668369438174}
   - {fileID: 2009971181}
   - {fileID: 1493187159}
+  - {fileID: 1704471578}
   - {fileID: 972380530}
   - {fileID: 1602013690}
   - {fileID: 3595045300492600160}
