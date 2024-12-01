@@ -3,9 +3,29 @@ guid: 565276a0e06aceb45b734e3c9213d22b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Orgasol\xAE_Invent_Smooth_\u2014_PA_12"
+    second: {fileID: 2100000, guid: 8134a3271d424cc4ca0e2be6be62f35c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "PA_11_\u2014_Nylon_\u2014_HP_11-30_(z_drukark\u0105_3D_EOS_P_396)"
+    second: {fileID: 2100000, guid: c69574da80853c04cb73e329956fdc89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poliamid_(Kapton)
+    second: {fileID: 2100000, guid: 3de8b41e5739f3f4988f07f6522ba3b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u017Bywica_acetalowa_(bia\u0142a)"
+    second: {fileID: 2100000, guid: 7b3fbafb0fd1ac346944e88a4590ac72, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
