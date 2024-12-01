@@ -29,7 +29,7 @@ public class EndScreen : MonoBehaviour
 
     private void HandleFuelChanged(float fuel)
     {
-        if (fuel <= 0.05f&&!alreadyCrashing)
+        if (fuel <= 1f&&!alreadyCrashing)
         {
             alreadyCrashing = true;
             print("fuel is 0, crashing");

@@ -17,7 +17,8 @@ public class PlayerFuelComponent : MonoBehaviour
     public void RemoveFuel(float amount)
     {
         currentFuel -= amount;
-        currentFuel = Mathf.Max(0.0f, currentFuel);
+        OnFuelChanged?.Invoke(currentFuel);
+        //currentFuel = Mathf.Max(0.0f, currentFuel);
         cameraShake.GenerateImpulse();
         if (currentFuel < 0.0f)
         {
@@ -28,6 +29,7 @@ public class PlayerFuelComponent : MonoBehaviour
     public void AddFuel(float amount)
     {
         float check = currentFuel + amount;
+        
         if (check >= initialFuel)
         {
             currentFuel = initialFuel;
@@ -36,6 +38,7 @@ public class PlayerFuelComponent : MonoBehaviour
         {
             currentFuel = check;
         }
+        OnFuelChanged?.Invoke(currentFuel);
     }
 
 private void Start()
@@ -47,8 +50,8 @@ private void Start()
     {
         if(!HasFuel) return;
         currentFuel -= (fuelConsumptionRate * Time.fixedDeltaTime);
-        currentFuel = Mathf.Max(0.0f, currentFuel);
         OnFuelChanged?.Invoke(currentFuel);
+        //currentFuel = Mathf.Max(0.0f, currentFuel);
         if (currentFuel < 0.0f)
         {
             OnNoFuelLeft();
