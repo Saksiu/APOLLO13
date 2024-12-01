@@ -12,6 +12,11 @@ public class PlanStageUIManager : MonoBehaviour
         Invoke(nameof(OnLaunchAnimEnd),2.5f);
     }
 
+    public void OnMainMEnuButtonClicked()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
     public void OnLaunchAnimEnd()
     {
         SceneManager.LoadScene("TestScene");
