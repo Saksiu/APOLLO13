@@ -89,3 +89,9 @@ public class ObstacleManager : MonoBehaviour
             Random.Range(enemySpaceShipSpawnIntervalRange.x, enemySpaceShipSpawnIntervalRange.y);
     }
 }
+
+public struct SpawnableObstacle
+{
+    public GameObject prefab;
+    public int weight;
+}

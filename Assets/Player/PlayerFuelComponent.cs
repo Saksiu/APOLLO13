@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,12 +11,14 @@ public class PlayerFuelComponent : MonoBehaviour
     [SerializeField] public float initialFuel = 100.0f;
     [SerializeField] public float currentFuel = 100.0f;
 
+    [SerializeField] private CinemachineImpulseSource cameraShake;
     public bool HasFuel => currentFuel > 0.0f;
 
     public void RemoveFuel(float amount)
     {
         currentFuel -= amount;
         currentFuel = Mathf.Max(0.0f, currentFuel);
+        cameraShake.GenerateImpulse();
         if (currentFuel < 0.0f)
         {
             OnNoFuelLeft();

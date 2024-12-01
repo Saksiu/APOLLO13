@@ -20,7 +20,7 @@ public class DistanceManager : Singleton<DistanceManager>
         //int meters = Mathf.FloorToInt(distanceLeft / 1000F);
         //int kilometers = Mathf.FloorToInt(distanceLeft - meters * 1000);
         //return string.Format("Distance to moon: //n {0:000000}km;{1:000}m", kilometers, meters); //TODO: verify format
-        return $"{(int)totalDistance} km left to moon";
+        return $"{(int)totalDistance} km to ";
     }
 
     private void Update()
