@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7533861363793119094}
+  - component: {fileID: 7185389352061894821}
+  - component: {fileID: 6026618035152977263}
   - component: {fileID: 2885236578401177560}
   - component: {fileID: 5940289521113156493}
   - component: {fileID: 5424286213329258285}
   - component: {fileID: 4181505536147174735}
   - component: {fileID: 703712246047721081}
   - component: {fileID: 6392528151328146063}
-  - component: {fileID: 7185389352061894821}
-  - component: {fileID: 6026618035152977263}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -46,6 +46,36 @@ Transform:
   - {fileID: 4486731634837205693}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &7185389352061894821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480272415871234117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaaf512beaa6f284cbebdf6372e17731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  canMoveVertical: 1
+  playerMoveBounds: {fileID: 0}
+--- !u!114 &6026618035152977263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5480272415871234117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6222199ba10b53646834db538ee2d247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuelConsumptionRate: 0.5
+  initialFuel: 100
+  currentFuel: 100
 --- !u!33 &2885236578401177560
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4941,36 +4971,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &7185389352061894821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480272415871234117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaaf512beaa6f284cbebdf6372e17731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  canMoveVertical: 1
-  playerMoveBounds: {fileID: 0}
---- !u!114 &6026618035152977263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5480272415871234117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6222199ba10b53646834db538ee2d247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuelConsumptionRate: 0.5
-  initialFuel: 100
-  currentFuel: 100
 --- !u!1001 &1313524484789616929
 PrefabInstance:
   m_ObjectHideFlags: 0

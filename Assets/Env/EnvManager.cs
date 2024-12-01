@@ -77,6 +77,7 @@ public class EnvManager : Singleton<EnvManager>
         newBackground.GetComponent<MeshRenderer>().material.mainTextureScale=backgroundScale;
         newBackground.GetComponent<MeshRenderer>().material.mainTextureOffset=getRandomBackgroundOffset();
         spawnedBackgrounds.Add(newBackground);
+        
     }
 
     private void FixedUpdate()

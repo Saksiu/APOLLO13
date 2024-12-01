@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PlanStageUIManager : MonoBehaviour
 {
+    [SerializeField] private Animator rocketAnimator;
     public void OnLaunchButtonClicked()
+    {
+        rocketAnimator.SetBool("Launch", true);
+        Invoke(nameof(OnLaunchAnimEnd),2.5f);
+    }
+
+    public void OnLaunchAnimEnd()
     {
         SceneManager.LoadScene("TestScene");
     }
