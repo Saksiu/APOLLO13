@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,15 +13,11 @@ public class UniversalManager : MonoBehaviour
     [SerializeField] private float defaultObstacleSpeed = 5f;
     [SerializeField] private float enemySpawnInterval = 8f;
     
-    [SerializeField] private GameObject obstacle1; //meteor
-    [SerializeField] private GameObject obstacle2; //ship
+    [SerializeField] private List<GameObject> obstacles;
     //TODO: add more
-    
-    [SerializeField] private GameObject boost1; //fuel
-    //TODO: add any
 
-    private Dictionary<int, GameObject> obstacles;
-    private Dictionary<int, GameObject> boosts;
+    [SerializeField] private List<GameObject> boosts;
+    //TODO: add any
 
     private void Start()
     {
@@ -30,12 +27,7 @@ public class UniversalManager : MonoBehaviour
             return;
         }
         
-        obstacles.Add(1,obstacle1);
-        obstacles.Add(2,obstacle2);
-        
-        boosts.Add(1,boost1);
-        
-        SpawnNextEnemy(obstacle1);
+        SpawnNextEnemy(obstacles[0]);
     }
 
     private void SpawnNextEnemy(GameObject kind)
@@ -44,6 +36,8 @@ public class UniversalManager : MonoBehaviour
         Vector3 spawnPosition = new Vector3(Random.Range(bounds.min.x, bounds.max.x), 0, 30);
 
         Instantiate(kind, spawnPosition, new Quaternion(0, 180,0,0));
+        Rigidbody rb = kind.GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0, 0, -defaultObstacleSpeed);
         
         if(NextSpawnCooldownRef!=null)
             StopCoroutine(NextSpawnCooldownRef);
