@@ -23,5 +23,6 @@ public class BarrelsScript : MonoBehaviour
     private void OnCollisionEnter()
     {
         PlayerController.Instance.FuelComponent.AddFuel(10);
+        Destroy(gameObject);
     }
 }
