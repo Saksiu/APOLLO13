@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup howToPlayCanvasGroup;
     public void OnStartGameButtonClicked()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("PlanScene");
     }
 
     public void OnExitButtonClicked()
